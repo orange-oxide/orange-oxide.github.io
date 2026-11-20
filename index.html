@@ -7,7 +7,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
   <style>
     * {
       margin: 0;
@@ -27,10 +26,11 @@
       position: relative;
     }
 
+    /* Animated gradient background */
     .bg {
       position: fixed;
       inset: 0;
-      background:
+      background: 
         radial-gradient(ellipse 80% 60% at 20% 20%, rgba(37, 99, 235, 0.35) 0%, transparent 50%),
         radial-gradient(ellipse 70% 50% at 80% 80%, rgba(59, 130, 246, 0.25) 0%, transparent 50%),
         radial-gradient(ellipse 60% 40% at 50% 50%, rgba(29, 78, 216, 0.15) 0%, transparent 60%),
@@ -44,6 +44,7 @@
       100% { opacity: 1; filter: hue-rotate(15deg); }
     }
 
+    /* Particles */
     .particles {
       position: fixed;
       inset: 0;
@@ -75,6 +76,7 @@
       }
     }
 
+    /* Card */
     .card {
       width: 100%;
       max-width: 400px;
@@ -83,7 +85,7 @@
       -webkit-backdrop-filter: blur(18px);
       border-radius: 28px;
       border: 1.5px solid rgba(96, 165, 250, 0.35);
-      box-shadow:
+      box-shadow: 
         0 0 0 1px rgba(59, 130, 246, 0.15),
         0 0 40px rgba(37, 99, 235, 0.25),
         0 0 80px rgba(37, 99, 235, 0.12),
@@ -94,6 +96,8 @@
       position: relative;
       z-index: 10;
       overflow: hidden;
+
+      /* Appearance animation */
       opacity: 0;
       transform: translateY(40px) scale(0.96);
       animation: cardIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards;
@@ -117,6 +121,7 @@
       pointer-events: none;
     }
 
+    /* Avatar */
     .avatar-wrap {
       position: relative;
       width: 122px;
@@ -130,7 +135,7 @@
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid rgba(96, 165, 250, 0.75);
-      box-shadow:
+      box-shadow: 
         0 0 0 5px rgba(37, 99, 235, 0.2),
         0 0 30px rgba(59, 130, 246, 0.5),
         0 0 60px rgba(37, 99, 235, 0.25);
@@ -152,6 +157,7 @@
       50% { transform: scale(1.08); opacity: 1; }
     }
 
+    /* Name with shimmer */
     .name {
       font-size: 1.8rem;
       font-weight: 800;
@@ -178,6 +184,7 @@
       to { background-position: 200% center; }
     }
 
+    /* Badge */
     .badge {
       display: inline-block;
       background: rgba(37, 99, 235, 0.18);
@@ -193,6 +200,7 @@
       box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
     }
 
+    /* Description */
     .description {
       color: #94a3b8;
       font-size: 0.9rem;
@@ -206,6 +214,7 @@
       font-weight: 600;
     }
 
+    /* Divider */
     .divider {
       width: 60%;
       height: 1px;
@@ -213,6 +222,7 @@
       background: linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.5), transparent);
     }
 
+    /* Links */
     .links {
       display: flex;
       flex-direction: column;
@@ -247,7 +257,7 @@
       background: rgba(30, 58, 110, 0.55);
       border-color: rgba(96, 165, 250, 0.65);
       transform: translateY(-2px);
-      box-shadow:
+      box-shadow: 
         0 6px 20px rgba(37, 99, 235, 0.3),
         0 0 20px rgba(59, 130, 246, 0.15);
     }
@@ -263,7 +273,6 @@
       text-align: left;
       position: relative;
       z-index: 1;
-      min-width: 0;
     }
 
     .link-icon {
@@ -293,7 +302,6 @@
       display: flex;
       flex-direction: column;
       gap: 2px;
-      min-width: 0;
     }
 
     .link-title {
@@ -307,6 +315,7 @@
       color: #64748b;
     }
 
+    /* Neon button */
     .btn {
       background: linear-gradient(135deg, #3b82f6, #2563eb);
       color: #fff;
@@ -319,17 +328,16 @@
       white-space: nowrap;
       position: relative;
       z-index: 1;
-      box-shadow:
+      box-shadow: 
         0 0 12px rgba(59, 130, 246, 0.5),
         0 0 24px rgba(37, 99, 235, 0.25),
         inset 0 1px 0 rgba(255, 255, 255, 0.2);
       transition: all 0.25s ease;
-      flex-shrink: 0;
     }
 
     .link:hover .btn {
       background: linear-gradient(135deg, #60a5fa, #3b82f6);
-      box-shadow:
+      box-shadow: 
         0 0 18px rgba(96, 165, 250, 0.7),
         0 0 36px rgba(59, 130, 246, 0.4),
         inset 0 1px 0 rgba(255, 255, 255, 0.25);
@@ -340,32 +348,17 @@
       .card {
         padding: 28px 16px 24px;
       }
-
       .name {
         font-size: 1.55rem;
-      }
-
-      .link {
-        padding: 11px 10px;
-      }
-
-      .link-left {
-        gap: 9px;
-      }
-
-      .btn {
-        font-size: 0.68rem;
-        padding: 7px 9px;
       }
     }
   </style>
 </head>
-
 <body>
   <div class="bg"></div>
   <div class="particles" id="particles"></div>
 
-  <main class="card">
+  <div class="card">
     <div class="avatar-wrap">
       <div class="avatar-glow"></div>
       <img src="avatar.jpg" alt="ORANGE" class="avatar">
@@ -374,16 +367,11 @@
     <h1 class="name">ORANGE</h1>
     <div class="badge">Creator 5 LVL</div>
 
-    <p class="description">
-      Креатор игры <strong>Oxide</strong> 5 уровня<br>
-      Выкладываю все новости по игре в своём Telegram канале<br>
-      Провожу ивенты на закрытых серверах с большим иксом
-    </p>
-
     <div class="divider"></div>
 
     <div class="links">
-      <a href="https://t.me/ORANGE_OXIDE" target="_blank" rel="noopener noreferrer" class="link">
+      <!-- Telegram канал -->
+      <a href="https://t.me/ORANGE_OXIDE" target="_blank" class="link">
         <div class="link-left">
           <div class="link-icon">
             <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
@@ -396,46 +384,50 @@
         <span class="btn">Перейти</span>
       </a>
 
-      <a href="https://t.me/EventOxideBot?start=" target="_blank" rel="noopener noreferrer" class="link">
+      <!-- Набор на ивент -->
+      <a href="https://t.me/EventOxideBot?start=" target="_blank" class="link">
         <div class="link-left">
           <div class="link-icon">
             <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
           </div>
           <div class="link-text">
-            <span class="link-title">Сервер 100х</span>
+            <span class="link-title">Набор на ивент</span>
             <span class="link-sub">Event Oxide Bot</span>
           </div>
         </div>
         <span class="btn">Перейти</span>
       </a>
 
-      <a href="https://donatov.net/ref/ORANGE_OXIDE" target="_blank" rel="noopener noreferrer" class="link">
+      <!-- Донат -->
+      <a href="https://donatov.net/ref/ORANGE_OXIDE" target="_blank" class="link">
         <div class="link-left">
           <div class="link-icon">
             <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1 1.05.82 1.87 2.65 1.87 1.96 0 2.4-.98 2.4-1.59 0-.83-.44-1.61-2.67-2.14-2.48-.6-4.18-1.62-4.18-3.67 0-1.72 1.39-2.84 3.11-3.21V4h2.67v1.95c1.86.45 2.79 1.86 2.85 3.39H14.3c-.05-1.11-.64-1.87-2.22-1.87-1.5 0-2.4.68-2.4 1.64 0 .84.65 1.39 2.67 1.91s4.18 1.39 4.18 3.91c-.01 1.83-1.38 2.83-3.12 3.16z"/></svg>
           </div>
           <div class="link-text">
-            <span class="link-title">Монеты покупаю здесь</span>
+            <span class="link-title">Любой донат по низкой цене</span>
             <span class="link-sub">donatov.net</span>
           </div>
         </div>
         <span class="btn">Перейти</span>
       </a>
 
-      <a href="https://t.me/+O41mQDcn3JVhMzY6" target="_blank" rel="noopener noreferrer" class="link">
+      <!-- Резервный канал -->
+      <a href="https://t.me/+O41mQDcn3JVhMzY6" target="_blank" class="link">
         <div class="link-left">
           <div class="link-icon">
             <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
           </div>
           <div class="link-text">
-            <span class="link-title">Скачать бету</span>
+            <span class="link-title">Резервный канал</span>
             <span class="link-sub">Telegram</span>
           </div>
         </div>
         <span class="btn">Перейти</span>
       </a>
 
-      <a href="https://t.me/XStarsShop_bot?start=" target="_blank" rel="noopener noreferrer" class="link">
+      <!-- Дешёвые тг звёзды -->
+      <a href="https://t.me/XStarsShop_bot?start=" target="_blank" class="link">
         <div class="link-left">
           <div class="link-icon">
             <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
@@ -448,7 +440,8 @@
         <span class="btn">Перейти</span>
       </a>
 
-      <a href="https://t.me/orange_oxide_chat" target="_blank" rel="noopener noreferrer" class="link">
+      <!-- Наш чат -->
+      <a href="https://t.me/orange_oxide_chat" target="_blank" class="link">
         <div class="link-left">
           <div class="link-icon">
             <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
@@ -461,20 +454,22 @@
         <span class="btn">Перейти</span>
       </a>
 
-      <a href="https://t.me/Oxide_community" target="_blank" rel="noopener noreferrer" class="link">
+      <!-- Попасть на ивент -->
+      <a href="https://t.me/Oxide_community" target="_blank" class="link">
         <div class="link-left">
           <div class="link-icon">
             <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
           </div>
           <div class="link-text">
-            <span class="link-title">Найти клан</span>
+            <span class="link-title">Попасть на ивент</span>
             <span class="link-sub">Oxide Community</span>
           </div>
         </div>
         <span class="btn">Перейти</span>
       </a>
 
-      <a href="https://oxide.link/Q6-WLV-GR" target="_blank" rel="noopener noreferrer" class="link">
+      <!-- Скачать oxide -->
+      <a href="https://oxide.link/Q6-WLV-GR" target="_blank" class="link">
         <div class="link-left">
           <div class="link-icon">
             <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
@@ -487,9 +482,10 @@
         <span class="btn">Перейти</span>
       </a>
     </div>
-  </main>
+  </div>
 
   <script>
+    // Create floating particles
     const container = document.getElementById('particles');
     const count = 28;
 
